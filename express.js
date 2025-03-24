@@ -7,10 +7,11 @@ import gistCard from "./api/gist.js";
 import express from "express";
 
 const app = express();
-app.listen(process.env.port || 9000);
+app.listen(process.env.port || 8080, '127.0.0.1');
 
 app.get("/", statsCard);
 app.get("/pin", repoCard);
 app.get("/top-langs", langCard);
 app.get("/wakatime", wakatimeCard);
 app.get("/gist", gistCard);
+console.log("API started !");
